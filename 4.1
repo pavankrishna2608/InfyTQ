@@ -1,0 +1,19 @@
+s=[]
+def rotate(x,y):
+    p=x[len(x)-y:]
+    q=x[:len(x)-y]
+    r=p+q
+    s[:]=p+q
+    print(r,s)
+    print(type(r))
+a='rhdt:246,ghftd:1246'
+a=a.split(',')
+k=[]
+for i in a:
+    k.append(i.split(':'))
+print(k)
+x=(sum(int(i)**2 for i in k[i][1]))
+if x%2==0:
+    rotate(c[0],1)
+else:
+    rotate(c[0],2)
