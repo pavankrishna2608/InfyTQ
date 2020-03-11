@@ -1,0 +1,12 @@
+def ls(s):
+    n=len(s)
+    for i in range(n//2,0,-1):
+        prefix = s[0:i]
+        print("p ",i,prefix)
+        suffix = s[n-i:n]
+        print("s ",n-i,suffix)
+        if (prefix==suffix):
+            print(i,"yo")
+    return 0
+s="xxabcxabcxx"
+print(ls(s))
