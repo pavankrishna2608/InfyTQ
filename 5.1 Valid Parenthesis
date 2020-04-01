@@ -5,15 +5,10 @@ def check(s):
     for i in range(len(s)):
         if s[i] in ope:
             st.append(s[i])
-            print('b4 last','-',s[i],'-',st)
         elif s[i] in clo:
             last = clo.index(s[i])
-            print('last',s[i],'-',last)
-            print('last1.1',len(st),'-',st[len(st)-1])
             if (len(st) > 0) and (ope[last] == st[len(st) - 1]) :
-                print('b4 poping',st)
                 st.pop()
-                print('after poping',st)
             else:
                 return ("at position",i+1)
     if len(st) == 0:
