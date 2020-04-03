@@ -1,0 +1,18 @@
+'''
+Ex 1)
+Input : a string of comma separated numbers.
+The numbers 5 and 8 are present in the list
+Assume that 8 always comes after 5.
+Case 1: num1 = add all numbers which do not lie between 5 and
+8 in the input.
+Case 2 : num2= numbers formed by concatenating all numbers
+from 5 to 8 .
+Output: sum of num1 and num2
+'''
+def samp1(s):
+    a=list(map(int, s.split(',')))
+    c=sum(a[:a.index(5)]+a[a.index(8)+1:])
+    d=''.join(map(str, a[a.index(5):a.index(8)+1]))
+    return c+int(d)
+s='3,2,6,5,1,4,8,9'
+print(samp1(s))
