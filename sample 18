@@ -1,0 +1,26 @@
+'''
+Write a python function nearest_palindrome ()
+Which can accepts a number and return the nearest greater
+palindrome number
+'''
+n=120
+#nl=n
+nh=n
+'''
+while True:
+    rev=int(str(nl)[::-1])
+    if nl==rev:
+        low=nl
+        print(low)
+        break
+    else:
+        nl=nl-1
+'''
+while True:
+    rev=int(str(nh)[::-1])
+    if nh==rev:
+        high=nh
+        print(high)
+        break
+    else:
+        nh=nh+1
