@@ -1,0 +1,18 @@
+'''
+Number of odd sub arrays
+Find the number of distinct subarrays in an array of position
+integers such that the sum of the subarray is an odd integer , two
+subarray are considered
+different if they either start or end at different index.
+'''
+n1=1
+n2=3
+a=[i for i in range(n1,n2+1)]
+print(a)
+aa=[(a[i:j+1]) for i in range(len(a)) for j in range(i,len(a))]
+print(aa)
+c=0
+for i in (aa):
+    if sum(i)%2!=0:
+        c+=1
+print(c)
