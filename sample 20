@@ -1,0 +1,9 @@
+n=input()
+l=[0,1,4,9,16,25]
+r=''
+for i in n:
+    if int(i)%2!=0:
+        r+=str(l[int(i)])
+    else:
+        continue
+print(r[:4])
