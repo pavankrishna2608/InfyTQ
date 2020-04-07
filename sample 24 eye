@@ -1,0 +1,9 @@
+import itertools
+a=list(map(int,input().split(',')))
+s=int(input())
+c=list(itertools.combinations(a,4))
+count=0
+for i in c:
+    if sum(i)==s:
+        count+=1
+print(count)
