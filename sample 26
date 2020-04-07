@@ -1,0 +1,30 @@
+'''
+Ex26)
+Input :HelLoWOrld
+Output: dWerHoOlLl
+Instruction:
+First get the similar char in combinations like :
+['d', 'e', 'H', 'lLl', 'oO', 'r', 'W']
+Then concatenate first element and last element wise versa.
+dWerHoOlLl
+'''
+
+k='HelLoWOrld'
+c=sorted(set(k.upper()))
+f=[]
+for j in range(len(c)):
+    s=''
+    for i in k:
+        if i.upper()==c[j]:
+            s=s+i
+    f.append(s)
+print(f)
+out=[]
+for i in range(len(f)):
+    if f[i]!=f[len(f)-1-i]:
+        out.append(f[i])
+        out.append(f[len(f)-1-i])
+    else:
+        out.append(f[i])
+        break
+print(''.join(out))
