@@ -1,0 +1,48 @@
+'''
+A string which is a mixture of letter and integer and special char
+from which find the largest even number from the available digit
+after removing the duplicates.
+If an even number is not formed then return -1.
+Ex : infosys@337
+O/p : -1
+Hello#81@21349
+O/p :983412
+'''
+
+import itertools
+inp1=input()
+s=set()
+for i in inp1:
+    if i.isdigit():
+        s.add(i)
+p=list(itertools.permutations(s,len(s)))
+q=set()
+m=0
+for i in p:
+    j=''.join(i)
+    if int(j)%2==0 and int(j)>m:
+        m=int(j)
+print(m)
+#or
+'''
+    if int(j)%2==0:
+         q.add(int(j))
+print(max(q))
+'''
+
+#Smallest Possible Odd Number
+
+#min odd
+inp1=input()
+s=set()
+for i in inp1:
+    if i.isnumeric() or i==0:
+        s.add(i)
+p=list(itertools.permutations(s,len(s)))
+r=[]
+for i in p:
+    if i[0]!='0':
+        j=''.join(i)
+        if int(j)%2!=0:
+            r.append(int(j))
+print(min(r))
