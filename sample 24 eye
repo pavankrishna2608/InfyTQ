@@ -1,3 +1,11 @@
+"""
+Set of number given and the sum is given
+-1 , 1, 0,0,2,-2
+Sum=0
+Output should be combination of which satisfy the case
+(-1,1,2,-2)(0,0,1,-1)(0,0,-2,2)
+Output : 3
+"""
 import itertools
 a=list(map(int,input().split(',')))
 s=int(input())
