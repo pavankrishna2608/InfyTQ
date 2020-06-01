@@ -1,19 +1,28 @@
-s=[]
-def rotate(x,y):
-    p=x[len(x)-y:]
-    q=x[:len(x)-y]
-    r=p+q
-    s[:]=p+q
-    print(r,s)
-    print(type(r))
-a='rhdt:246,ghftd:1246'
-a=a.split(',')
-k=[]
-for i in a:
-    k.append(i.split(':'))
-print(k)
-x=(sum(int(i)**2 for i in k[i][1]))
-if x%2==0:
-    rotate(c[0],1)
-else:
-    rotate(c[0],2)
+'''String rotation
+Input rhdt:246,ghftd:1246
+Expl :here every string is associated with the number sep by : if
+sum of squares of digits is even then rotate the string by 1 if
+square of digits is odd then rotate the string left by 2 position
+2*2+4*4+6*6=56 which is even so rotate rhdt --->trhd
+1*1+2*2+4*4+6*6=57 which is odd then rotate string by 2 at left
+“ghftd” op: ftdgh'''
+
+first=input().split(',')
+strings = []
+nums = []
+for i in first:
+    s,n=i.split(":")
+    strings.append(s)
+    nums.append(n)
+print(strings,nums)
+def rotate(s,n):
+    l=list(n)
+    sq=0
+    for i in l:
+        sq=sq+int(i)**2
+    if (sq%2)==0:
+        return s[len(s)-1]+s[:len(s)-1]
+    else:
+        return s[2:]+s[:2]        
+for i in range(len(strings)):
+    print(rotate(strings[i],nums[i]),end=' ')
