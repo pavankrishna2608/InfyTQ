@@ -1,0 +1,16 @@
+#Reversing the alphabets of  the  string by keeping the special charecters in  the  same  position
+n=input()
+l=list(n)
+
+s = ""
+for i in n:
+    if i.isalpha():
+        s=s+i
+s=s[::-1]
+
+j=0
+for i in range(len(l)):
+   if l[i].isalpha():
+       l[i]=s[j] #we are re-assigning the values of the list
+       j+=1# i.e we are not moving the pointer of reverse char sting if its not alphabet
+print("".join(l))
