@@ -1,3 +1,11 @@
+'''
+A non empty string instr containing only alphabets. Print length of longest prefix in instr which
+is same as suffix.
+prefix and suffix should not overlap in instr.
+print -1 if no prefix exists which is also the suffix without overlap.
+Do case sensitive comparison wherever necessary.
+position starts from 1.
+
 def ls(s):
     n=len(s)
     for i in range(n//2,0,-1):
@@ -10,3 +18,17 @@ def ls(s):
     return 0
 s="xxabcxabcxx"
 print(ls(s))
+'''
+#Updated!
+
+x=input()
+
+for i in range(1,len(x)//2):
+    prefix=x[:i]
+    suffix=x[len(x)-1-i:len(x)-1]
+    if prefix==suffix:
+        r=i+1
+        break
+    else:
+        r=(-1)
+print(r)
