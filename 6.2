@@ -1,0 +1,24 @@
+'''
+A string is given. We have to find the longet substring which is unique(that has no repetation) and
+has a minimum size of 3.
+if more than one substring is found with max length the we have to print the one which appeared
+first in the string.If no substring is present which matches the condition then we have to print ‐1.
+eg ‐ input ‐ "A@bcd1abx"
+output ‐ "A@bcd1"
+Note:‐" A@bcd1a" is not a unique substring as it contains "A" and "a" and substring "bcd1a" does
+not appear first.
+'''
+
+def los(s):
+    result = ''
+    for i in range(len(s)):
+        ss=''
+        for j in range(i,len(s)):
+            if s[j] not in s[i:j]:
+                ss+=s[j]
+            else:
+                break
+        if len(result)<len(ss):
+            result=ss
+    return(result)
+print(los('A@bcd1abx'))
