@@ -15,7 +15,7 @@ s=set()
 for i in inp1:
     if i.isdigit():
         s.add(i)
-p=list(itertools.permutations(s,len(s)))
+p=list(itertools.permutations(s,len(s)))#it would be both 12 & 21, combinations would be only 12 or 21
 q=set()
 m=0
 for i in p:
