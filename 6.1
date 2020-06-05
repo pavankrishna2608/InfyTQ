@@ -1,0 +1,35 @@
+An array is given suppose,a=[3,5,8,2,19,12,7,11]
+one have to find the longest subarray such that its element satisfies the 
+condition: x[i]=x[i‐1]+x[i‐2]
+if more than one subarray of is found of maximum length one has to print the array which starts
+with the minimum element and if they are also same then the array with minimum second element
+and so on.
+if no subarray is found one has to print ‐1.
+ans ‐
+here the subarrays are [2,3,5,8], [3,8,11], [5,7,12,19]
+the longest subarrays are ‐ [2,3,5,8], [5,7,12,19]
+so expected ouput ‐ [2,3,5,8]
+'''
+a=[3,5,8,2,19,12,7,11]
+a[:]=sorted(a)
+ss=[]
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        s=[]
+        x=a[j] #a[i+1]
+        y=a[i]+a[j]
+        while y in a[j+1:]:
+            if len(s)==0:
+                s.append(a[i])
+                s.append(x)
+                s.append(y)
+            else:
+                s.append(y)
+            y=x+y
+            x=y
+        if(len(ss)<len(s)):
+            ss=s
+if len(ss)!=0:
+    print(ss)
+else:
+    print(-1)
