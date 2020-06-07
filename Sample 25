@@ -1,0 +1,20 @@
+'''Find the longest palindrome from a string
+Input : moomso
+Possible cases
+Moom , mom , oso , ooo , omo
+Longest is moom so output :moom'''
+
+string=(input())
+
+z=[string[i:j+1] for i in range(len(string)) for j in range(len(string))]
+final=[]
+for i in z:
+    if i==i[::-1]:
+       final.append(i)
+s=0
+t=''
+for i in range(len(final)):
+    if len(final[i])>s:
+        s=len(final[i])
+        t=final[i]
+print(s,t)
